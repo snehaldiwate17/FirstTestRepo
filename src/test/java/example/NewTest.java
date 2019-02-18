@@ -13,15 +13,16 @@ public class NewTest {
 	private WebDriver driver;		
 	@Test				
 	public void testEasy() {	
-		driver.get("http://demo.guru99.com/test/guru99home/");  
+		driver.get("https://www.google.co.in/");  
 		String title = driver.getTitle();				 
-		Assert.assertTrue(title.contains("Demo Guru99 Page")); 	
+		Assert.assertTrue(title.contains("Google")); 	
 		
 	}	
 	@BeforeTest
 	public void beforeTest() {	
 		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	    //driver = new FirefoxDriver();  
 	}		
 	@AfterTest
